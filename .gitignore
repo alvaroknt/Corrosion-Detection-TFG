@@ -6,6 +6,20 @@ __pycache__/
 # C extensions
 *.so
 
+# Google Colab / Jupyter
+*.ipynb_checkpoints
+*.checkpoint.ipynb
+
+
+
+# Modelos grandes
+*.pt
+*.h5
+*.pth
+
+# Archivos ocultos comunes
+.DS_Store
+
 # Distribution / packaging
 .Python
 build/
