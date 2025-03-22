@@ -42,9 +42,9 @@ For this project, the dataset was adapted to a **binary classification task**, w
 
 A sample of the transformation process is shown below:
 
-| Original Image | Original Mask | Binary Mask |
+| Original Image | Original Mask | Binary Mask (created)|
 |----------------|----------------|--------------|
-| ![original](images/example_original.jpg) | ![original_mask](images/example_mask_original.png) | ![binary](images/example_mask_binary.png) |
+| ![original](images/img_og.jpeg) | ![original_mask](images/mask_og.png) | ![binary](images/mask_bin.png) |
 
 ---
 
