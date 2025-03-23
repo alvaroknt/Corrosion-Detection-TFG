@@ -6,7 +6,7 @@ This repository contains the code, models, and results of my Final Degree Projec
 *Aplicación de técnicas de aprendizaje profundo en la detección de corrosión utilizando visión por computador*  
 *Application of Deep Learning Techniques for Corrosion Detection Using Computer Vision*
 
-📄 [Download the full TFG (PDF)](TFG/TFG.pdf)
+📄 [Download the full TFG (PDF)](TFG/CañeteMartiAlvaro_TFG.pdf)
 
 
 ## 🔍 Objective
