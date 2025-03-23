@@ -17,7 +17,7 @@ The aim of this project is to develop and compare several deep learning models f
 
 ## 🗂️ Repository Structure
 
-- `UNetPlusPlus/`
+- `UNet++/`
   - `resnet50/`
   - `efficientnetb4/`
   - `vgg16/`
