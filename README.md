@@ -1,8 +1,13 @@
 # 🧠 Corrosion Detection with Deep Learning
 
-This repository contains the code, models, and results of my Final Degree Project (Trabajo de Fin de Grado), focused on the detection of corrosion using deep learning techniques.
+This repository contains the code, models, and results of my Final Degree Project (Trabajo de Fin de Grado) from the **Universidad Complutense de Madrid**, as part of the **Mathematics and Statistics** degree.
 
----
+📘 **Project title**:  
+*Aplicación de técnicas de aprendizaje profundo en la detección de corrosión utilizando visión por computador*  
+*Application of Deep Learning Techniques for Corrosion Detection Using Computer Vision*
+
+📄 [Download the full TFG (PDF)](TFG/TFG.pdf)
+
 
 ## 🔍 Objective
 
@@ -12,20 +17,43 @@ The aim of this project is to develop and compare several deep learning models f
 
 ## 🗂️ Repository Structure
 
-- `images/` – Input images used for training and testing  
-- `masks/` – Ground truth segmentation masks  
-- `models/` – Scripts for model architectures and training  
-- `results/` – Evaluation metrics and visual predictions  
-- `notebooks/` – Jupyter notebooks used during the analysis  
-- `utils/` – Helper functions (data loaders, metrics, etc.)
+- `UNetPlusPlus/`
+  - `resnet50/`
+  - `efficientnetb4/`
+  - `vgg16/`
+
+- `DeepLabV3+/`
+  - `resnet50/`
+  - `efficientnetb4/`
+
+- `CustomModel/`
+  - `resnet50/`
+  - `efficientnetb4/`
+  - `vgg16/`
+
+- `images/` – Visual examples and comparison figures  
+- `results/` – Evaluation metrics (confusion matrices, plots, etc.)
+- `README.md` – Project documentation
 
 ---
 
 ## 🧪 Models Used
 
-- U-Net with MobileNetV2 backbone  
-- DeepLabV3+ with ResNet50 and EfficientNetB0  
-- Custom binary classification architectures  
+This project compares multiple deep learning architectures for binary segmentation of corrosion in images. The following models and backbones were used:
+
+- **UNet++** with:
+  - ResNet50
+  - EfficientNetB4
+  - VGG16
+
+- **DeepLabV3+** with:
+  - ResNet50
+  - EfficientNetB4
+
+- **Custom CNN-based binary classifier**, built from scratch, using:
+  - ResNet50
+  - EfficientNetB4
+  - VGG16
 
 ---
 
@@ -48,9 +76,34 @@ A sample of the transformation process is shown below:
 
 ---
 
+## 📊 Results
+
+This section summarizes the performance of the models and provides visual examples of predictions.
+
+### 🔍 Prediction Comparison – Custom Model (Backbone)
+
+The following figure shows a visual comparison of the input image, ground truth, and predictions obtained using the custom CNN-based model (referred to as "Backbone" in the TFG):
+
+📄 [View comparison PDF](results/comparacion_imagenes.pdf)
+
+---
+
+### 📋 Performance Metrics
+
+The main evaluation metrics (Accuracy, IoU, F1-score, etc.) for the proposed models are summarized below:
+
+📄 [Download full metrics table (PDF)](results/metricas_modelos.pdf)
+
+---
+
+### 🧪 Prediction Comparison Across Models
+
+This document shows the prediction outputs for all 8 proposed models on selected test images, facilitating a side-by-side qualitative comparison:
+
+📄 [View model comparison PDF](results/comparacion_modelos.pdf)
+
+
 ## ▶️ How to Run
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/corrosion-detection.git
-   cd corrosion-detection
+> 🛠️ This section will be updated soon with detailed instructions on how to run the training and evaluation scripts once the code has been fully uploaded.
+
