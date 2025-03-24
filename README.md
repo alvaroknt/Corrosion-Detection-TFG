@@ -84,23 +84,46 @@ This section summarizes the performance of the models and provides visual exampl
 
 The following figure shows a visual comparison of the input image, ground truth, and predictions obtained using the custom CNN-based model (referred to as "Backbone" in the TFG):
 
-📄 [View comparison PDF](results/Comparación_imágenes.png)
+![Prediction Comparison – Custom Model](results/Comparación_imágenes.png)
+
 
 ---
 
 ### 📋 Performance Metrics
 
-The main evaluation metrics (Accuracy, IoU, F1-score, etc.) for the proposed models are summarized below:
+Below are the main evaluation metrics (F1, Jaccard, Accuracy, etc.) for each model:
 
-📄 [Download full metrics table (PDF)](results/metricas_modelos.pdf)
+#### Custom Model (Backbone)
+
+| Model            | F1     | Jaccard | Accuracy | Precision | Recall | Specificity | AUC    |
+|------------------|--------|---------|----------|-----------|--------|-------------|--------|
+| ResNet50         | 0.8237 | 0.7016  | 0.9291   | 0.8710    | 0.7819 | 0.9686      | 0.8711 |
+| EfficientNetB4   | 0.8074 | 0.6770  | 0.9198   | 0.8151    | 0.7997 | 0.9517      | 0.8757 |
+| VGG16            | 0.8116 | 0.6830  | 0.9242   | 0.8488    | 0.7784 | 0.9629      | 0.8706 |
+
+#### DeepLabV3+
+
+| Model            | F1     | Jaccard | Accuracy | Precision | Recall | Specificity | AUC    |
+|------------------|--------|---------|----------|-----------|--------|-------------|--------|
+| ResNet50         | 0.8371 | 0.7200  | 0.9338   | 0.8656    | 0.8110 | 0.9664      | 0.8887 |
+| EfficientNetB4   | 0.8531 | 0.7438  | 0.9387   | 0.8597    | 0.8466 | 0.9632      | 0.9049 |
+
+#### UNet++
+
+| Model            | F1     | Jaccard | Accuracy | Precision | Recall | Specificity | AUC    |
+|------------------|--------|---------|----------|-----------|--------|-------------|--------|
+| ResNet50         | 0.8349 | 0.7166  | 0.9326   | 0.8608    | 0.8106 | 0.9651      | 0.8879 |
+| EfficientNetB4   | 0.8568 | 0.7496  | 0.9402   | 0.8625    | 0.8515 | 0.9638      | 0.9077 |
+| VGG16            | 0.8301 | 0.7097  | 0.9301   | 0.8494    | 0.8131 | 0.9613      | 0.8872 |
 
 ---
 
 ### 🧪 Prediction Comparison Across Models
 
-This document shows the prediction outputs for all 8 proposed models on selected test images, facilitating a side-by-side qualitative comparison:
+The following figure shows the prediction outputs for all 8 proposed models on selected test images, allowing a side-by-side qualitative comparison:
 
-📄 [View model comparison PDF](results/comparacion_modelos.pdf)
+![Prediction Comparison Across Models](results/predicciones.png)
+
 
 
 ## ▶️ How to Run
