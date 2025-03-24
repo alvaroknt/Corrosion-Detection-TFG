@@ -84,7 +84,7 @@ This section summarizes the performance of the models and provides visual exampl
 
 The following figure shows a visual comparison of the input image, ground truth, and predictions obtained using the custom CNN-based model (referred to as "Backbone" in the TFG):
 
-📄 [View comparison PDF](results/Comparación_imágenes.pdf)
+📄 [View comparison PDF](results/Comparación_imágenes.png)
 
 ---
 
