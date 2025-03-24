@@ -27,9 +27,11 @@ The aim of this project is to develop and compare several deep learning models f
   - `efficientnetb4/`
 
 - `CustomModel/`
-  - `resnet50/`
-  - `efficientnetb4/`
-  - `vgg16/`
+  - `resnet50/train_backbone_resnet50.py`
+  - `efficientnetb4/train_backbone_efficientnetb4.py`
+  - `vgg16/train_backbone_vgg16.py`
+  - `utils/common.py` – Common helper functions used across all models
+
 
 - `images/` – Visual examples and comparison figures  
 - `results/` – Evaluation metrics (confusion matrices, plots, etc.)
@@ -50,10 +52,11 @@ This project compares multiple deep learning architectures for binary segmentati
   - ResNet50
   - EfficientNetB4
 
-- **Custom CNN-based binary classifier**, built from scratch, using:
-  - ResNet50
-  - EfficientNetB4
-  - VGG16
+- **Custom CNN-based binary classifiers** (from scratch), each using:
+  - ResNet50 → `CustomModel/resnet50/train_backbone_resnet50.py`
+  - EfficientNetB4 → `CustomModel/efficientnetb4/train_backbone_efficientnetb4.py`
+  - VGG16 → `CustomModel/vgg16/train_backbone_vgg16.py`
+
 
 ---
 
@@ -129,4 +132,15 @@ The following figure shows the prediction outputs for all 8 proposed models on s
 ## ▶️ How to Run
 
 > 🛠️ This section will be updated soon with detailed instructions on how to run the training and evaluation scripts once the code has been fully uploaded.
+
+
+Each model can be executed independently using Google Colab or locally with Python.
+
+1. Make sure the dataset is available in your environment (Google Drive or local disk).
+2. Replace the placeholder paths (marked with `# TODO`) in each script with the correct paths to your image and mask directories.
+3. Run one of the model training functions, for example:
+
+```python
+from train_backbone_resnet50 import BB_ResNet50
+BB_ResNet50(loss="BCE", num_epochs=10)
 
