@@ -47,17 +47,17 @@ This project compares multiple deep learning architectures for binary segmentati
 
 - **UNet++** implemented `using segmentation_models_pytorch.UnetPlusPlus` with the following encoders:
   - [ResNet50](UNet++/resnet50/train_unet++_resnet50.py) → `UNet++/resnet50/train_unet++_resnet50.py`
-  - EfficientNetB4 → `UNet++/efficientnetb4/train_unet++_efficientnetb4.py`
-  - VGG16 → `UNet++/vgg16/train_unet++_vgg16.py`
+  - [EfficientNetB4](UNet++/efficientnetb4/train_unet++_efficientnetb4.py) → `UNet++/efficientnetb4/train_unet++_efficientnetb4.py`
+  - [VGG16](UNet++/vgg16/train_unet++_vgg16.py) → `UNet++/vgg16/train_unet++_vgg16.py`
 
 - **DeepLabV3+** implemented using `segmentation_models_pytorch.DeepLabV3Plus` with:
-  - ResNet50 → `DeepLabV3+/resnet50/train_deeplabv3_resnet50.py`
-  - EfficientNetB4 → `DeepLabV3+/efficientnetb4/train_deeplabv3_efficientnetb4.py`
+  - [ResNet50](DeepLabV3+/resnet50/train_deeplabv3_resnet50.py) → `DeepLabV3+/resnet50/train_deeplabv3_resnet50.py`
+  - [EfficientNetB4](DeepLabV3+/efficientnetb4/train_deeplabv3_efficientnetb4.py) → `DeepLabV3+/efficientnetb4/train_deeplabv3_efficientnetb4.py`
 
 - **Custom CNN-based binary classifiers** (from scratch), each using:
-  - ResNet50 → `CustomModel/resnet50/train_backbone_resnet50.py`
-  - EfficientNetB4 → `CustomModel/efficientnetb4/train_backbone_efficientnetb4.py`
-  - VGG16 → `CustomModel/vgg16/train_backbone_vgg16.py`
+  - [ResNet50](CustomModel/resnet50/train_backbone_resnet50.py) → `CustomModel/resnet50/train_backbone_resnet50.py`
+  - [EfficientNetB4](CustomModel/efficientnetb4/train_backbone_efficientnetb4.py) → `CustomModel/efficientnetb4/train_backbone_efficientnetb4.py`
+  - [VGG16](CustomModel/vgg16/train_backbone_vgg16.py) → `CustomModel/vgg16/train_backbone_vgg16.py`
 
 
 ---
