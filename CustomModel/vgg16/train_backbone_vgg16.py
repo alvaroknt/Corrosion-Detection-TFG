@@ -17,7 +17,8 @@ from PIL import Image
 from tqdm import tqdm
 from torch.cuda.amp import autocast, GradScaler
 
-from utils.common import show_model_summary, plot_confusion_matrix, denormalize, clean_up
+from utils.common_utils import show_model_summary, plot_confusion_matrix, denormalize, clean_up
+
 from sklearn.metrics import (
     accuracy_score, f1_score, jaccard_score, precision_score,
     recall_score, roc_auc_score
