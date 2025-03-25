@@ -149,24 +149,6 @@ def DL_ResNet50(loss="BCE", alpha=1, gamma=2, num_epochs=10, batch_size=4,
 
         plot_confusion_matrix(all_masks, all_preds)
 
-        # Save metrics
-        metrics_file = "/content/drive/MyDrive/TFG/metricas_tfg.csv"
-        metrics_data = {
-            "Model": [model_name],
-            "Accuracy": [accuracy_score(all_masks, all_preds)],
-            "F1 Score": [f1_score(all_masks, all_preds)],
-            "Jaccard Score": [jaccard_score(all_masks, all_preds)],
-            "Specificity": [recall_score(all_masks, all_preds, pos_label=0)],
-            "AUC": [roc_auc_score(all_masks, all_preds)],
-            "Recall": [recall_score(all_masks, all_preds)],
-            "Precision": [precision_score(all_masks, all_preds)]
-        }
-        df = pd.DataFrame(metrics_data)
-
-        if os.path.exists(metrics_file):
-            prev = pd.read_csv(metrics_file)
-            df = pd.concat([prev, df], ignore_index=True)
-        df.to_csv(metrics_file, index=False)
 
     tracker = CarbonTracker(epochs=2)
     t0 = time.time()
