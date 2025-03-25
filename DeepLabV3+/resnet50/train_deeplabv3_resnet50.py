@@ -17,7 +17,7 @@ from sklearn.metrics import accuracy_score, f1_score, jaccard_score, recall_scor
 import segmentation_models_pytorch as smp
 from carbontracker.tracker import CarbonTracker
 
-from utils.common import show_model_summary, denormalize, plot_confusion_matrix, clean_up
+from utils.common_utils import show_model_summary, plot_confusion_matrix, denormalize, clean_up
 
 warnings.filterwarnings("ignore", category=UserWarning, module="carbontracker")
 
