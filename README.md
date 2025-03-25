@@ -17,25 +17,26 @@ The aim of this project is to develop and compare several deep learning models f
 
 ## 🗂️ Repository Structure
 
-- `UNet++/`
-  - `resnet50/`
-  - `efficientnetb4/`
-  - `vgg16/`
+- `UNet++/`  
+  - `resnet50/train_unet++_resnet50.py`  
+  - `efficientnetb4/train_unet++_efficientnetb4.py`  
+  - `vgg16/train_unet++_vgg16.py`  
 
-- `DeepLabV3+/`
-  - `resnet50/`
-  - `efficientnetb4/`
+- `DeepLabV3+/`  
+  - `resnet50/train_deeplabv3_resnet50.py`  
+  - `efficientnetb4/train_deeplabv3_efficientnetb4.py`  
 
-- `CustomModel/`
-  - `resnet50/train_backbone_resnet50.py`
-  - `efficientnetb4/train_backbone_efficientnetb4.py`
-  - `vgg16/train_backbone_vgg16.py`
-  - `utils/common.py` – Common helper functions used across all models
+- `CustomModel/`  
+  - `resnet50/train_backbone_resnet50.py`  
+  - `efficientnetb4/train_backbone_efficientnetb4.py`  
+  - `vgg16/train_backbone_vgg16.py`  
 
+- `utils/common_utils.py` – Common helper functions used across all models (memory cleanup, visualization, metrics)
 
 - `images/` – Visual examples and comparison figures  
-- `results/` – Evaluation metrics (confusion matrices, plots, etc.)
-- `README.md` – Project documentation
+- `results/` – Evaluation metrics (metrics, plots, etc.)  
+- `README.md` – Project documentation  
+- `.gitignore` – Specifies files/folders to exclude from version control
 
 ---
 
@@ -128,19 +129,69 @@ The following figure shows the prediction outputs for all 8 proposed models on s
 ![Prediction Comparison Across Models](results/predicciones.png)
 
 
-
 ## ▶️ How to Run
-
-> 🛠️ This section will be updated soon with detailed instructions on how to run the training and evaluation scripts once the code has been fully uploaded.
-
 
 Each model can be executed independently using Google Colab or locally with Python.
 
-1. Make sure the dataset is available in your environment (Google Drive or local disk).
+1. Make sure the dataset is available in your environment (e.g., Google Drive or local disk).
 2. Replace the placeholder paths (marked with `# TODO`) in each script with the correct paths to your image and mask directories.
-3. Run one of the model training functions, for example:
+3. Run the corresponding training function for the model you wish to use. Example usage for each model is shown below:
 
 ```python
+# Custom CNN Backbone Models
 from train_backbone_resnet50 import BB_ResNet50
 BB_ResNet50(loss="BCE", num_epochs=10)
 
+from train_backbone_efficientnetb4 import BB_EfficientNetB4
+BB_EfficientNetB4(loss="FL", alpha=0.25, gamma=2, num_epochs=15)
+
+from train_backbone_vgg16 import BB_VGG16
+BB_VGG16(loss="BCE", num_epochs=12)
+
+
+# UNet++ Models
+from train_unet++_resnet50 import UNet_ResNet50
+UNet_ResNet50(loss="BCE", num_epochs=10)
+
+from train_unet++_efficientnetb4 import UNet_EfficientNetB4
+UNet_EfficientNetB4(loss="FL", alpha=0.25, gamma=2, num_epochs=15)
+
+from train_unet++_vgg16 import UNet_VGG16
+UNet_VGG16(loss="BCE", num_epochs=12)
+
+
+# DeepLabV3+ Models
+from train_deeplabv3_resnet50 import DL_ResNet50
+DL_ResNet50(loss="BCE", num_epochs=10)
+
+from train_deeplabv3_efficientnetb4 import DL_EfficientNetB4
+DL_EfficientNetB4(loss="FL", alpha=1, gamma=2, num_epochs=20)
+```
+## ⚙️ Customization Parameters
+
+Each training function accepts the following parameters to customize behavior:
+
+| Parameter        | Description                                                                 |
+|------------------|-----------------------------------------------------------------------------|
+| `loss`           | Loss function to use: `"BCE"` (Binary Cross-Entropy) or `"FL"` (Focal Loss) |
+| `alpha`, `gamma` | Focal Loss hyperparameters (only relevant if `loss="FL"`)                   |
+| `num_epochs`     | Number of training epochs                                                   |
+| `batch_size`     | Number of samples per training batch                                        |
+| `shuffle_train`  | Whether to shuffle the training dataset (`True` or `False`)                 |
+| `shuffle_test`   | Whether to shuffle the test dataset (`True` or `False`)                     |
+| `model_name`     | Custom name to label the model (used in logging and display)                |
+
+---
+
+## 📦 Requirements
+
+To run this project, you'll need the following Python libraries:
+
+```bash
+pip install torch torchvision segmentation-models-pytorch tqdm numpy pandas scikit-learn matplotlib pillow carbontracker seaborn torchinfo
+```
+ℹ️ Note:
+
+- If you're using Google Colab, many of these libraries are pre-installed.
+- Segmentation-models-pytorch requires PyTorch ≥ 1.6 and torchvision.
+- Carbontracker is optional and can be removed if not needed for energy tracking.
